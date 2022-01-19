@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    <!-- Header element will hold timer and highscore -->
+    <header>
+        <div>
+            <button class="headerbtn" id="highScore">View High Scores</button>
+        </div>
+        <!-- Wanted to make it 5000 SUX from the 1987 RoboCop movie but, just went with 5000 -->
+        <div id="welcome">Quizzer 5,000!</div>
+        <div>
+            <p>Time: <span id="timer">123</span></p>
+        </div>
+    </header>
+
+    <div id="main">
+        <!-- Container for grid items -->
+        <div id="gridContainer">
+            <p id="questionDisplay"></p>
+            <p id="scoreDisplay"></p>
+            <p id="enterInitials"></p>
+            <textarea id=enterName></textarea>
+            <button class="btn" id="start-quiz">Start Quiz</button>
+            <button class="btn" id="answer1"></button>
+            <button class="btn" id="answer2"></button>
+            <button class="btn" id="answer3"></button>
+            <button class="btn" id="answer4"></button>
+            <button class="btn" id="submitScore"></button>
+        </div>
+    </div>
+    </section>
+
+    <!-- javascript section -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

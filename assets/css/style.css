@@ -1,0 +1,35 @@
+/* My Variables */
+:root { 
+    --quizQuestions: blue ;
+  }
+
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body section */
+body {
+    font-family: 'Helvetica, sans-serif';
+    font-size: 22px;
+    background-color: white;
+}
+
+/* Header Section */
+header {
+    display: flex; /* Flex container to display the child elements as flex with space between and wrap */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    color:black;
+    background-color: yellow;
+    height: 70px;
+    font-size: 6vw;
+    padding: 10px, 10px, 10px, 10px;
+    font-family: 'Merienda';font-size: 22px;
+  }
+  header #welcome{
+    font-size: 5.3vw;
+  }
+
