@@ -11,30 +11,33 @@
 
 /* Body section */
 body {
-    font-family: 'Helvetica, sans-serif';
-    font-size: 22px;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica, sans-serif';
+  font-size: 22px;
+  background-color: white;
+  min-height: 100vh;
 }
 
 /* Header Section */
 header {
-    display: flex; /* Flex container to display the child elements as flex with space between and wrap */
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    color:black;
-    background-color: rgb(207, 120, 7);
-    height: 70px;
-    font-size: 6vw;
-    padding: 10px, 10px, 10px, 10px;
-    font-family: 'Merienda';font-size: 22px;
-    border-top: blue;
-    border-bottom: blue;
-    border-style: inset;
+  display: flex; /* Flex container to display the child elements as flex with space between and wrap */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  color:black;
+  background-color: rgb(207, 120, 7);
+  height: 70px;
+  font-size: 6vw;
+  padding: 10px, 10px, 10px, 10px;
+  font-family: 'Merienda';font-size: 22px;
+  border-top: blue;
+  border-bottom: blue;
+  border-style: inset;
   }
   header #welcome{
-    font-size: 5.3vw;
-  }
+  font-size: 5.3vw;
+}
 
 #main{
   display: flex; /* Flex container to display the child elements as flex with space between and wrap */
@@ -50,13 +53,10 @@ header {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  
-  
 }
 
 
 footer{
-  font-size: smaller;
-  
+  margin-top: auto;
 }
 

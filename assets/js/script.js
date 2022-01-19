@@ -9,26 +9,9 @@ var option2Btn = document.getElementById("option2");
 var option3Btn = document.getElementById("option3");
 var option4Btn = document.getElementById("option4");
 var highScoreBtn = document.getElementById("highScore");
-var timeLeft = document.getElementById("timeLeft");
+var timeLeftEl = document.getElementById("timer");
 var questionDis = document.createElement("questionDis");
 var enterName = document.createElement("enterName");
-
-$(document).ready(function () { // upon document load this function will happen
-    $("#start-quiz").click(function () { // WHen I click start quiz do this...
-        var playerName1 = $("input[name=enterName]").val();
-        $("h2").append(playerName1);
-        enterName.style.display = "none"; // atempting to hide button
-    });
-});
-// Do not display anything that is not ready to be displayed
-// option1Btn.style.display = "none";
-// option2Btn.style.display = "none";
-// option3Btn.style.display = "none";
-// option4Btn.style.display = "none";
-// enterName.style.display = "none";
-
-
-
 // Question Objects
 var q1 = {
     question: "What Hall of Fame Chicago Bear football player wore #54?",
@@ -95,6 +78,51 @@ var questions = [q1, q2, q3, q4, q5, q5, q6, q7, q8, q9];
 
 // Player Object (make sure to make functions)
 var playerInfo = {
-    name: getPlayerName(),
-    points: getPlayerPoints()
+    // name: getPlayerName(),
+    // points: getPlayerPoints()
 };
+
+function countdown() {
+    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+    var timeInterval = setInterval(function () {
+        // As long as the `timeLeft` is greater than 1
+        if (timeLeft > 1) {
+            // Set the `textContent` of `timerEl` to show the remaining seconds
+            timeLeftEl.textContent = timeLeft;
+            // Decrement `timeLeft` by 1
+            timeLeft--;
+        } else if (timeLeft === 1) {
+            // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+            timeLeftEl.textContent = timeLeft;
+            timeLeft--;
+        } else {
+            // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+            timeLeftEl.textContent = '';
+            // Use `clearInterval()` to stop the timer
+            clearInterval(timeInterval);
+            // Call the `displayMessage()` function
+            displayMessage();
+        }
+    }, 1000);
+}
+$(document).ready(function () { // upon document load this function will happen
+    $("#start-quiz").click(function () { // WHen I click start quiz do this...
+        var playerName1 = $("input[name=enterName]").val();
+        $("h2").append(playerName1); // adds player's name
+        $(this).hide(); // hides button
+        $("input").hide(); // hides name textbox
+
+        // Start timer
+        countdown()
+
+        //Generate Questions
+        for (let i = 0; i < questions.length; i++) {
+            // iterate through each question
+            // console.log(questions[i].question);
+            // console.log(JSON.stringify(questions[i]));
+            questionDis.textContent = questions[i].question;
+            questionDis.append(questionDis);
+        }
+
+    });
+});
