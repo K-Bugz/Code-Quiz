@@ -1,6 +1,6 @@
 /* My Variables */
 :root { 
-    --quizQuestions: blue ;
+    --quizQuestions: rgb(0, 105, 175) ;
   }
 
 /* Universal selector */
@@ -23,13 +23,18 @@ header {
     flex-wrap: wrap;
     align-items: center;
     color:black;
-    background-color: yellow;
+    background-color: rgb(207, 120, 7);
     height: 70px;
     font-size: 6vw;
     padding: 10px, 10px, 10px, 10px;
     font-family: 'Merienda';font-size: 22px;
+    border-top: blue;
+    border-bottom: blue;
+    border-style: inset;
   }
   header #welcome{
     font-size: 5.3vw;
   }
 
+footer{
+}

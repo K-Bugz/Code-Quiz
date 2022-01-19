@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Code Quiz</title>
+    <title>Bears Trivia</title>
 </head>
 
 <body>
     <!-- Header element will hold timer and highscore -->
     <header>
+        <!-- <a href="./assets/media/bear-down-chicago-bears-nfl-fight-song.mp3"></a> -->
         <div>
             <button class="headerbtn" id="highScore">View High Scores</button>
         </div>
         <!-- Wanted to make it 5000 SUX from the 1987 RoboCop movie but, just went with 5000 -->
-        <div id="welcome">Quizzer 5,000!</div>
+        <div id="welcome">Bears Trivia 5,000!</div>
         <div>
             <p>Time: <span id="timer">123</span></p>
         </div>
@@ -25,7 +26,7 @@
         <div id="gridContainer">
             <p id="questionDisplay"></p>
             <p id="scoreDisplay"></p>
-            <p id="enterInitials"></p>
+            <p id="enterName"></p>
             <textarea id=enterName></textarea>
             <button class="btn" id="start-quiz">Start Quiz</button>
             <button class="btn" id="answer1"></button>
@@ -37,6 +38,12 @@
     </div>
     </section>
 
+    <footer>
+        <h2>Made by Kevin Bugusky </h2>
+        <!-- I dont think teh volume button is working.... don't annoy your guests.... -->
+        <embed src="./assets/media/bear-down-chicago-bears-nfl-fight-song.mp3" video.volume=".2" autostart="true"
+            controls></audio>
+    </footer>
     <!-- javascript section -->
     <script src="./assets/js/script.js"></script>
 </body>

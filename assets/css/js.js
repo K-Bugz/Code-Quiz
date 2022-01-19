@@ -1,6 +1,25 @@
 // Variables
+var score = 0; // Max value by decreasing each wrong answer
+var highScore = 50; // Score add fix for ticking timer.
+var timeLeft = 60;
+// Btn elements
+var startBtn = document.getElementById("start");
+var option1Btn = document.getElementById("option1");
+var option2Btn = document.getElementById("option2");
+var option3Btn = document.getElementById("option3");
+var option4Btn = document.getElementById("option4");
+var highScoreBtn = document.getElementById("highScore");
+var timeLeft = document.getElementById("timeLeft");
+var questionDis = document.createElement("questionDis");
+var enterName = document.createElement("enterName");
 
 
+// Do not display anything that is not ready to be displayed
+option1Btn.style.display = "none";
+option2Btn.style.display = "none";
+option3Btn.style.display = "none";
+option4Btn.style.display = "none";
+enterName.style.display = "none";
 // Question Objects
 var q1 = {
     question: "What Hall of Fame Chicago Bear football player wore #54?",
