@@ -1,6 +1,7 @@
 /* My Variables */
 :root { 
-    --quizQuestions: rgb(0, 105, 175) ;
+    --quizQBackGround: rgb(253, 123, 1) ;
+    --quizQfontColor: rgb(26, 13, 197) ;
   }
 
 /* Universal selector */
@@ -15,7 +16,7 @@ body {
   flex-direction: column;
   font-family: 'Helvetica, sans-serif';
   font-size: 22px;
-  background-color: white;
+  background: url("../media/field.jpg");
   min-height: 100vh;
 }
 
@@ -25,18 +26,24 @@ header {
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  color:black;
-  background-color: rgb(207, 120, 7);
+  color: var(--quizQfontColor);
+  background-color: var(--quizQBackGround);
   height: 70px;
   font-size: 6vw;
   padding: 10px, 10px, 10px, 10px;
   font-family: 'Merienda';font-size: 22px;
-  border-top: blue;
-  border-bottom: blue;
+  border-top: var(--quizQfontColor);
+  border-bottom: var(--quizQfontColor);
   border-style: inset;
   }
   header #welcome{
   font-size: 5.3vw;
+}
+.highScorebtn{
+  font-size: large;
+  color: var(--quizQfontColor);
+  background-color: white;
+  margin: 4px;
 }
 
 #main{
@@ -55,8 +62,21 @@ header {
   flex-direction: column;
 }
 
-
+.btn{
+  font-size: larger;
+  color: var(--quizQfontColor);
+  background-color: var(--quizQBackGround);
+  margin: 4px;
+}
+#questionDisplay{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding: 14px;
+}
 footer{
   margin-top: auto;
+  align-self: center;
+  color: chartreuse;
+  text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 

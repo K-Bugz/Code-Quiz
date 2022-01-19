@@ -2,15 +2,16 @@
 var score = 0; // Player's score cannot go below zero
 var highScore = 0; // High Score value
 var timeLeft = 60; // Time left. Should be penalized for incorrect choices
+var i = -1;
 // Btn elements
 var startBtn = document.getElementById("start-quiz");
+var questionDis = document.getElementById("questionDisplay");
 var option1Btn = document.getElementById("option1");
 var option2Btn = document.getElementById("option2");
 var option3Btn = document.getElementById("option3");
 var option4Btn = document.getElementById("option4");
 var highScoreBtn = document.getElementById("highScore");
 var timeLeftEl = document.getElementById("timer");
-var questionDis = document.createElement("questionDis");
 var enterName = document.createElement("enterName");
 // Question Objects
 var q1 = {
@@ -82,8 +83,8 @@ var playerInfo = {
     // points: getPlayerPoints()
 };
 
+// Functions  1:Countdown   2:UpdateQuestion
 function countdown() {
-    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function () {
         // As long as the `timeLeft` is greater than 1
         if (timeLeft > 1) {
@@ -105,24 +106,38 @@ function countdown() {
         }
     }, 1000);
 }
+// 
+function updateButton() {
+    i++;
+    questionDis.textContent = questions[i].question; // Display Question
+    option1Btn.textContent = "A) " + questions[i].choices[0];
+    option2Btn.textContent = "B) " + questions[i].choices[1];
+    option3Btn.textContent = "C) " + questions[i].choices[2];
+    option4Btn.textContent = "D) " + questions[i].choices[3];
+
+    document.getElementById("btn").addEventListener("click", updateButton());
+}
+
+
+
 $(document).ready(function () { // upon document load this function will happen
     $("#start-quiz").click(function () { // WHen I click start quiz do this...
         var playerName1 = $("input[name=enterName]").val();
-        $("h2").append(playerName1); // adds player's name
+        $("h2").append("Name: " + playerName1); // adds player's name
         $(this).hide(); // hides button
         $("input").hide(); // hides name textbox
 
         // Start timer
         countdown()
+        questionDis.textContent = questions[0].question; // Display Question
+        option1Btn.textContent = "A) " + questions[0].choices[0];
+        option2Btn.textContent = "B) " + questions[0].choices[1];
+        option3Btn.textContent = "C) " + questions[0].choices[2];
+        option4Btn.textContent = "D) " + questions[0].choices[3];
 
-        //Generate Questions
-        for (let i = 0; i < questions.length; i++) {
-            // iterate through each question
-            // console.log(questions[i].question);
-            // console.log(JSON.stringify(questions[i]));
-            questionDis.textContent = questions[i].question;
-            questionDis.append(questionDis);
-        }
-
+        // var i = -1;
+        // while (i < questions.length) {
+        //     document.getElementById("btn").addEventListener("click", updateButton());
+        // }
     });
 });
