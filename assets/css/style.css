@@ -42,7 +42,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  background-image: url("./assets/media/football.PNG");
+  /* background-image: url("./assets/media/football.png"); */
 }
 #gridContainer{
   display: flex; /* Flex container to display the child elements as flex with space between and wrap */
