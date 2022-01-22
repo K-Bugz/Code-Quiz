@@ -26,10 +26,10 @@
         <!-- Container for grid items -->
         <div id="gridContainer">
             <h2></h2>
-            <p id="questionDisplay"></p>
             <p id="scoreDisplay"></p>
+            <p id="questionDisplay"></p>
             <input id=enterName name="enterName" placeholder="enter name here" rows="5" cols="26"></input>
-            <button class="btn" id="start-quiz">Start Quiz</button>
+            <button class="startBtn" id="start-quiz">Start Quiz</button>
             <button class="btn" id="option1"></button>
             <button class="btn" id="option2"></button>
             <button class="btn" id="option3"></button>
@@ -39,7 +39,10 @@
     </section>
 
     <footer>
-        <embed src="./assets/media/bear-down-chicago-bears-nfl-fight-song.mp3" autostart="true" controls></audio>
+        <!-- Add start volume to low -->
+        <audio controls>
+            <source src="./assets/media/bear-down-chicago-bears-nfl-fight-song.mp3">
+        </audio>
         <h3>Made by Kevin Bugusky </h3>
     </footer>
     <!-- javascript section -->

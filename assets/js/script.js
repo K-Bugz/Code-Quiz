@@ -2,142 +2,160 @@
 var score = 0; // Player's score cannot go below zero
 var highScore = 0; // High Score value
 var timeLeft = 60; // Time left. Should be penalized for incorrect choices
-var i = -1;
-// Btn elements
+var index = -1; // index of list questions
+// This selects the correct Btn elements (next time give them the El)
 var startBtn = document.getElementById("start-quiz");
 var questionDis = document.getElementById("questionDisplay");
+var scoreBtn = document.getElementById("scoreDisplay");
+var highScoreBtn = document.getElementById("highScore");
 var option1Btn = document.getElementById("option1");
 var option2Btn = document.getElementById("option2");
 var option3Btn = document.getElementById("option3");
 var option4Btn = document.getElementById("option4");
-var highScoreBtn = document.getElementById("highScore");
-var timeLeftEl = document.getElementById("timer");
+var tlEl = document.getElementById("timer"); // tlEL stands for time left
 var enterName = document.createElement("enterName");
+var mainEl = document.getElementById("main");
 // Question Objects
 var q1 = {
     question: "What Hall of Fame Chicago Bear football player wore #54?",
     choices: ["Charles Tillman", "Brian Urlacher", "Dick Butkus", "Walter Payton"],
-    answer: "Brian Urlacher",
-    theyGotCorrect: false
-}
+    answer: "Brian Urlacher"
+};
 var q2 = {
     question: "What is the name of the stadium of the Chicago Bears?",
-    choices: ["United Center", "Midway Stadium", "O'Hare Field", "Soldier  Field"],
-    answer: "Soldier  Field",
-    theyGotCorrect: false
-}
+    choices: ["United Center", "Midway Stadium", "O'Hare Field", "Soldier Field"],
+    answer: "Soldier Field"
+};
 var q3 = {
     question: "What Hall of Fame Chicago Bear football player wore #34?",
     choices: ["Charles Tillman", "Gale Sayers", "Dick Butkus", "Walter Payton"],
-    answer: "Walter Payton",
-    theyGotCorrect: false
-}
+    answer: "Walter Payton"
+};
 var q4 = {
     question: "What player has the unique record of back to back overtime walkoff interception tds?",
     choices: ["Mike Brown", "William 'the fridge' Perry", "Richard Dent", "Rex Grossman"],
-    answer: "Mike Brown",
-    theyGotCorrect: false
-}
+    answer: "Mike Brown"
+};
 var q5 = {
     question: "What was the last years the Chicago Bears went to the superbowl?",
     choices: ["1985-1986", "2001-2002", "2006-2007", "2011-2012"],
-    answer: "2006-2007",
-    theyGotCorrect: false
-}
+    answer: "2006-2007"
+};
 var q6 = {
     question: "Who are the Bears rival (longest in NFL history)?",
     choices: ["Detriot Lions", "Minnesota Vikings", "New York Giants", "GreenBay Packers"],
-    answer: "GreenBay Packers",
-    theyGotCorrect: false
-}
-var q6 = {
-    question: "Who are the Bears rival (longest in NFL history)?",
-    choices: ["Detriot Lions", "Minnesota Vikings", "New York Giants", "GreenBay Packers"],
-    answer: "GreenBay Packers",
-    theyGotCorrect: false
-}
+    answer: "GreenBay Packers"
+};
 var q7 = {
     question: "Which Chicago Bear has scored the most points as a Bear?",
     choices: ["Robbie Gould", "Walter Payton", "Gale Sayers", "George Blanda"],
-    answer: "Robbie Gould",
-    theyGotCorrect: false
-}
+    answer: "Robbie Gould"
+};
 var q8 = {
     question: "Which former Bear is currently working for the FBI?",
     choices: ["Tommie Harris", "Brian Urlacher", "Pat Summeral", "Charles Tillman"],
-    answer: "Charles Tillman",
-    theyGotCorrect: false
-}
+    answer: "Charles Tillman"
+};
 var q9 = {
     question: "What was Walter Payton's nickname?",
     choices: ["Sweetness", "Cadillac", "The Sultan of Sweat", "Crazy Shoes Payton"],
-    answer: "Sweetness",
-    theyGotCorrect: false
-}
-// List of question objects
-var questions = [q1, q2, q3, q4, q5, q5, q6, q7, q8, q9];
-
-// Player Object (make sure to make functions)
-var playerInfo = {
-    // name: getPlayerName(),
-    // points: getPlayerPoints()
+    answer: "Sweetness"
 };
+// List of question objects
+var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9];
 
-// Functions  1:Countdown   2:UpdateQuestion
+// Functions  1:Countdown   2:UpdateQuestion 
 function countdown() {
     var timeInterval = setInterval(function () {
         // As long as the `timeLeft` is greater than 1
         if (timeLeft > 1) {
-            // Set the `textContent` of `timerEl` to show the remaining seconds
-            timeLeftEl.textContent = timeLeft;
-            // Decrement `timeLeft` by 1
-            timeLeft--;
-        } else if (timeLeft === 1) {
-            // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-            timeLeftEl.textContent = timeLeft;
+            tlEl.textContent = timeLeft;
             timeLeft--;
         } else {
-            // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-            timeLeftEl.textContent = '';
-            // Use `clearInterval()` to stop the timer
+            tlEl.textContent = '';// Once `timeLeft` gets to 0, set `timerEl` to an empty string
+            // Use `clearInterval()` to stop the timer   .... does this need more?
             clearInterval(timeInterval);
-            // Call the `displayMessage()` function
-            displayMessage();
         }
-    }, 1000);
+    }, 1000); // One thousand miliseconds is 1 second
 }
-// 
-function updateButton() {
-    i++;
-    questionDis.textContent = questions[i].question; // Display Question
-    option1Btn.textContent = "A) " + questions[i].choices[0];
-    option2Btn.textContent = "B) " + questions[i].choices[1];
-    option3Btn.textContent = "C) " + questions[i].choices[2];
-    option4Btn.textContent = "D) " + questions[i].choices[3];
-
-    document.getElementById("btn").addEventListener("click", updateButton());
+// Control if question is correct
+function questionCheck(elContent) {
+    console.log(elContent);
+    console.log(questions[index].answer);
+    console.log(elContent === questions[index].answer);
+    if (elContent === questions[index].answer) {
+        console.log("I am working! BOOOOOSHH!")
+        score += 100;
+        timeLeft += 10;
+        scoreBtn.textContent = "score: " + score;
+    } else {
+        console.log("You lose my good sir or ma'dam!")
+        score -= 50;
+        timeLeft -= 10;
+        scoreBtn.textContent = "score: " + score;
+    }
+}
+function endGame() { // End Game function
+    mainEl.setAttribute("id", "mainB");
+}
+function updateButton() { // update button functions
+    index++;
+    console.log(index);
+    if (index == questions.length) {
+        endGame()
+    }
+    questionDis.textContent = questions[index].question; // Display Question
+    option1Btn.textContent = questions[index].choices[0]; // Display option1
+    option2Btn.textContent = questions[index].choices[1]; // Display option2
+    option3Btn.textContent = questions[index].choices[2]; // Display option3
+    option4Btn.textContent = questions[index].choices[3]; // Display option4
+    //option1Btn.addEventListener("click", questionCheck(this.textContent), updateButton());
+    $(option1Btn).click(function () {
+        questionCheck(option1Btn.textContent)
+        updateButton();
+    });
+    $(option2Btn).click(function () {
+        questionCheck(option2Btn.textContent)
+        updateButton();
+    });
+    $(option3Btn).click(function () {
+        questionCheck(option3Btn.textContent)
+        updateButton();
+    });
+    $(option4Btn).click(function () {
+        questionCheck(option4Btn.textContent)
+        updateButton();
+    });
+    $(highScoreBtn).click(function () {
+        highScore1();
+    });
 }
 
 
+function highScore1() {
+    console.log("moo");
+}
 
 $(document).ready(function () { // upon document load this function will happen
     $("#start-quiz").click(function () { // WHen I click start quiz do this...
         var playerName1 = $("input[name=enterName]").val();
+        if (playerName1 === "") { // A catch or default if people don't insert a name in. 
+            playerName1 = "BumbleBee Tuna";
+        }
         $("h2").append("Name: " + playerName1); // adds player's name
-        $(this).hide(); // hides button
+        $(this).hide(); // hides start button
         $("input").hide(); // hides name textbox
+        option1Btn.setAttribute("class", "btnB"); // Shows questions
+        option2Btn.setAttribute("class", "btnB"); // Shows questions
+        option3Btn.setAttribute("class", "btnB"); // Shows questions
+        option4Btn.setAttribute("class", "btnB"); // Shows questions
+        scoreBtn.textContent = "score: " + score; // Shows Score
+        countdown() // Starts the timer
+        updateButton() // Calls itself for every question
 
-        // Start timer
-        countdown()
-        questionDis.textContent = questions[0].question; // Display Question
-        option1Btn.textContent = "A) " + questions[0].choices[0];
-        option2Btn.textContent = "B) " + questions[0].choices[1];
-        option3Btn.textContent = "C) " + questions[0].choices[2];
-        option4Btn.textContent = "D) " + questions[0].choices[3];
-
-        // var i = -1;
-        // while (i < questions.length) {
-        //     document.getElementById("btn").addEventListener("click", updateButton());
-        // }
+        // $(highScoreBtn).click(function () {
+        //     highScore1();
+        // });
     });
 });
+

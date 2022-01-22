@@ -44,6 +44,7 @@ header {
   color: var(--quizQfontColor);
   background-color: white;
   margin: 4px;
+  padding: 3px;
 }
 
 #main{
@@ -52,7 +53,10 @@ header {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  /* background-image: url("./assets/media/football.png"); */
+  visibility: visible;
+}
+#mainB{
+  visibility:hidden;
 }
 #gridContainer{
   display: flex; /* Flex container to display the child elements as flex with space between and wrap */
@@ -61,12 +65,27 @@ header {
   align-items: center;
   flex-direction: column;
 }
-
 .btn{
+  visibility: hidden;
+}
+.startBtn{
+  visibility: visible;
   font-size: larger;
   color: var(--quizQfontColor);
   background-color: var(--quizQBackGround);
   margin: 4px;
+  padding: 3px;
+}
+.startBtnB{
+  visibility: hidden;
+}
+.btnB{
+  visibility: visible;
+  font-size: larger;
+  color: var(--quizQfontColor);
+  background-color: var(--quizQBackGround);
+  margin: 4px;
+  padding: 3px;
 }
 #questionDisplay{
   font-family: Arial, Helvetica, sans-serif;
@@ -79,4 +98,10 @@ footer{
   color: chartreuse;
   text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
-
+input
+{
+  font-size:20px;
+}
+audio{
+  background-color: rgba(0, 0, 0, 0);
+}
