@@ -109,20 +109,20 @@ function updateButton() { // update button functions
     option2Btn.textContent = questions[index].choices[1]; // Display option2
     option3Btn.textContent = questions[index].choices[2]; // Display option3
     option4Btn.textContent = questions[index].choices[3]; // Display option4
-    //option1Btn.addEventListener("click", questionCheck(this.textContent), updateButton());
-    $(option1Btn).click(function () {
+    //option1Btn.addEventListener("click", updateButton());
+    $(option1Btn).unbind().click(function () {
         questionCheck(option1Btn.textContent)
         updateButton();
     });
-    $(option2Btn).click(function () {
+    $(option2Btn).unbind().click(function () {
         questionCheck(option2Btn.textContent)
         updateButton();
     });
-    $(option3Btn).click(function () {
+    $(option3Btn).unbind().click(function () {
         questionCheck(option3Btn.textContent)
         updateButton();
     });
-    $(option4Btn).click(function () {
+    $(option4Btn).unbind().click(function () {
         questionCheck(option4Btn.textContent)
         updateButton();
     });
@@ -130,13 +130,14 @@ function updateButton() { // update button functions
         highScore1();
     });
 }
-
-
 function highScore1() {
     console.log("moo");
 }
 
 $(document).ready(function () { // upon document load this function will happen
+    $(highScoreBtn).click(function () {
+        highScore1();
+    });
     $("#start-quiz").click(function () { // WHen I click start quiz do this...
         var playerName1 = $("input[name=enterName]").val();
         if (playerName1 === "") { // A catch or default if people don't insert a name in. 
