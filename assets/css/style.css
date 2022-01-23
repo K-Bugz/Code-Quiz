@@ -17,6 +17,7 @@ body {
   font-family: 'Helvetica, sans-serif';
   font-size: 22px;
   background: url("../media/field.jpg");
+  background-position: center;
   min-height: 100vh;
 }
 
