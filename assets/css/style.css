@@ -87,6 +87,21 @@ header {
   margin: 4px;
   padding: 3px;
 }
+.endGame{
+  display: flex; /* Flex container to display the child elements as flex with space between and wrap */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--quizQfontColor);
+  background-color: var(--quizQBackGround);
+  height: 70px;
+  font-size: 8vw;
+  padding: 10px, 10px, 10px, 10px;
+  font-family: 'Merienda';font-size: 22px;
+  border-top: var(--quizQfontColor);
+  border-bottom: var(--quizQfontColor);
+  border-style: inset;
+}
 #questionDisplay{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;

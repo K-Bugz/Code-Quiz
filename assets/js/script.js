@@ -1,7 +1,7 @@
 // Variables
 var score = 0; // Player's score cannot go below zero
-var highScore = 0; // High Score value
-var timeLeft = 60; // Time left. Should be penalized for incorrect choices
+var highScore = 150; // High Score value
+var timeLeft = 5; // Time left. Should be penalized for incorrect choices
 var index = -1; // index of list questions
 // This selects the correct Btn elements (next time give them the El)
 var startBtn = document.getElementById("start-quiz");
@@ -14,7 +14,7 @@ var option3Btn = document.getElementById("option3");
 var option4Btn = document.getElementById("option4");
 var tlEl = document.getElementById("timer"); // tlEL stands for time left
 var enterName = document.createElement("enterName");
-var mainEl = document.getElementById("main");
+
 // Question Objects
 var q1 = {
     question: "What Hall of Fame Chicago Bear football player wore #54?",
@@ -61,8 +61,7 @@ var q9 = {
     choices: ["Sweetness", "Cadillac", "The Sultan of Sweat", "Crazy Shoes Payton"],
     answer: "Sweetness"
 };
-// List of question objects
-var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9];
+var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9]; // List of question objects
 
 // Functions  1:Countdown   2:UpdateQuestion 
 function countdown() {
@@ -75,11 +74,11 @@ function countdown() {
             tlEl.textContent = '';// Once `timeLeft` gets to 0, set `timerEl` to an empty string
             // Use `clearInterval()` to stop the timer   .... does this need more?
             clearInterval(timeInterval);
+            endGame();
         }
     }, 1000); // One thousand miliseconds is 1 second
 }
-// Control if question is correct
-function questionCheck(elContent) {
+function questionCheck(elContent) { // Control if question is correct
     console.log(elContent);
     console.log(questions[index].answer);
     console.log(elContent === questions[index].answer);
@@ -96,12 +95,21 @@ function questionCheck(elContent) {
     }
 }
 function endGame() { // End Game function
-    mainEl.setAttribute("id", "mainB");
+    document.body.innerHTML = ("Game over! The high score is " + highScore);
+    document.body.setAttribute("class", "endGame");
+}
+function highScore1() {
+    highScoreBtn.textContent = highScore;
+
 }
 function updateButton() { // update button functions
     index++;
+    if (score > highScore) {
+        highScore = score;
+    }
+    highScore1()
     console.log(index);
-    if (index == questions.length) {
+    if (index >= questions.length - 1) {
         endGame()
     }
     questionDis.textContent = questions[index].question; // Display Question
@@ -129,9 +137,6 @@ function updateButton() { // update button functions
     $(highScoreBtn).click(function () {
         highScore1();
     });
-}
-function highScore1() {
-    console.log("moo");
 }
 
 $(document).ready(function () { // upon document load this function will happen
