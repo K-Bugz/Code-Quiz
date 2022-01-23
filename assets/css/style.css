@@ -109,6 +109,8 @@ header {
   font-size: 34px;
   padding: 14px;
   color: white;
+  text-shadow: 2.5px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  
 }
 footer{
   margin-top: auto;
