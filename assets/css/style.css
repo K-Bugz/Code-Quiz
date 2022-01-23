@@ -18,6 +18,7 @@ body {
   font-size: 22px;
   background: url("../media/field.jpg");
   background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
 }
 
@@ -105,8 +106,9 @@ header {
 }
 #questionDisplay{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 34px;
   padding: 14px;
+  color: white;
 }
 footer{
   margin-top: auto;
