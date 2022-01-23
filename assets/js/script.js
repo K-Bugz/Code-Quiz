@@ -1,7 +1,7 @@
 // Variables
 var score = 0; // Player's score cannot go below zero
 var highScore = 150; // High Score value
-var timeLeft = 5; // Time left. Should be penalized for incorrect choices
+var timeLeft = 33; // Time left. Should be penalized for incorrect choices
 var index = -1; // index of list questions
 // This selects the correct Btn elements (next time give them the El)
 var startBtn = document.getElementById("start-quiz");
