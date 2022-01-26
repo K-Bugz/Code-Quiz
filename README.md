@@ -17,7 +17,7 @@ A quiz over daaaa Bears!
 ## Contact Me
 Email: kbugusky@gmail.com <br>
 Linkedin: https://www.linkedin.com/in/kevinbugusky333454/ <br>
-GitHub: https://github.com/K-Bugz/Professional-Portfolio
+GitHub: https://github.com/K-Bugz/Code-Quiz
 
 ## Other 
 
