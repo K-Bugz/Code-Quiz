@@ -21,6 +21,10 @@ function countdown() {
         if (timeLeft > 1) { // As long as the `timeLeft` is greater than 1
             tlEl.textContent = timeLeft;
             timeLeft--;
+            if (y > 590) {
+                y = y - timeLeft * 2.5;
+                document.getElementById('aRod').style.top = y + "px"
+            }
         } else {
             tlEl.textContent = '';// Once `timeLeft` gets to 0, set `timerEl` to an empty string
             // Use `clearInterval()` to stop the timer   .... does this need more?
@@ -39,6 +43,8 @@ function questionCheck(elContent) { // Control if question is correct
         score += 100;
         timeLeft += 6;
         scoreBtn.textContent = "score: " + score;
+        y += 200;
+        document.getElementById('aRod').style.top = y + "px"
     } else {
         console.log("You lose my good sir or ma'dam!")
         score -= 50;

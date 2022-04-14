@@ -17,8 +17,8 @@ body {
   font-family: 'Helvetica, sans-serif';
   font-size: 22px;
   background: url("../media/field.jpg");
-  /* background-position: center; */
-  background-repeat: no-repeat;
+  background-position: center;
+  /* background-repeat: no-repeat; */
   /* min-height: 100vh; */
   /* height: fit-content; */
   background-color: var(--quizQBackGround);
@@ -45,6 +45,10 @@ header {
 
 header #welcome {
   font-size: 4.5vw;
+}
+
+#timer {
+  font-size: large;
 }
 
 .highScorebtn {
@@ -128,7 +132,11 @@ header #welcome {
   padding: 14px;
   color: white;
   text-shadow: 2.5px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
 
+#aRod {
+  position: fixed;
+  right: 27%;
 }
 
 footer {

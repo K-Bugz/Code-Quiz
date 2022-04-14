@@ -19,7 +19,7 @@
         <!-- Wanted to make it 5000 SUX from the 1987 RoboCop movie but, just went with 5000 -->
         <div id="welcome">Bears Trivia 5,000!</div>
         <div>
-            <p>Time: <span id="timer">34</span></p>
+            <p id="timer">Time: <span>34</span></p>
         </div>
     </header>
 
@@ -46,15 +46,18 @@
         </audio>
         <h3>Made by Kevin Bugusky </h3>
     </footer>
+    <img src="./assets/media/ARodgers.jpg" width="450px" height="600px" id='aRod'>
     <!-- javascript section -->
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/script.js"></script>
     <script>
         // Grabs audio tag and makes sure it plays at an acceptable sound level
         var audio = document.getElementById("beardown");
         audio.volume = 0.1;
+        document.getElementById('aRod').style.top = "1500px";
+        var y = document.getElementById('aRod').offsetTop;
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

@@ -45,7 +45,7 @@ var q9 = {
     answer: "Sweetness"
 };
 var q10 = {
-    question: "The bears unfortunately are the only team in the SuperBowl era to punt on every single ofensive series. What year did this sad event occur?",
+    question: "The bears are the only team in the SuperBowl era to punt on every single possesion. What year did this sad event occur?",
     choices: ["1995", "1997", "2015", "2017"],
     answer: "2015"
 };
@@ -75,7 +75,7 @@ var q15 = {
     answer: "Mike Tomczak"
 };
 var q16 = {
-    question: "What Bears has the most games suited up as a BearSS?",
+    question: "What player has the most games suited up as a Bear?",
     choices: ["Kevin Butler", "Richard Dent", "Walter Payton", "Patrick Mannelly"],
     answer: "Patrick Mannelly"
 };
