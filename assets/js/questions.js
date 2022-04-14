@@ -1,6 +1,6 @@
 // Question Objects and array
 var q1 = {
-    question: "What Hall of Fame Chicago Bear football player wore #54?",
+    question: "What Hall of Fame Chicago Bear wore #54?",
     choices: ["Charles Tillman", "Brian Urlacher", "Dick Butkus", "Walter Payton"],
     answer: "Brian Urlacher"
 };
@@ -30,7 +30,7 @@ var q6 = {
     answer: "GreenBay Packers"
 };
 var q7 = {
-    question: "Which Chicago Bear has scored the most points as a Bear?",
+    question: "Which Chicago Bear has scored the most points?",
     choices: ["Robbie Gould", "Walter Payton", "Gale Sayers", "George Blanda"],
     answer: "Robbie Gould"
 };
@@ -45,7 +45,7 @@ var q9 = {
     answer: "Sweetness"
 };
 var q10 = {
-    question: "The bears unfortanelty are the only team in the SuperBowl era to punt on every single ofensive series. What year did this occur?",
+    question: "The bears unfortunately are the only team in the SuperBowl era to punt on every single ofensive series. What year did this sad event occur?",
     choices: ["1995", "1997", "2015", "2017"],
     answer: "2015"
 };
@@ -61,7 +61,7 @@ var q12 = {
 };
 var q13 = {
     question: "How many career forced fumbles does Charles Tillman have?",
-    choices: ["38", "44", "42", "44"],
+    choices: ["38", "33", "42", "44"],
     answer: "44"
 };
 var q14 = {
@@ -75,12 +75,12 @@ var q15 = {
     answer: "Mike Tomczak"
 };
 var q16 = {
-    question: "What Bears has the most wins and games suited up?",
+    question: "What Bears has the most games suited up as a BearSS?",
     choices: ["Kevin Butler", "Richard Dent", "Walter Payton", "Patrick Mannelly"],
     answer: "Patrick Mannelly"
 };
 var q17 = {
-    question: "How many seasons was George Halas the head coach?",
+    question: "How many seasons was George Halas the head coach of da BEARS?",
     choices: ["25", "30", "35", "40"],
     answer: "40"
 };

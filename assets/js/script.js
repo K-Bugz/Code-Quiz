@@ -37,12 +37,12 @@ function questionCheck(elContent) { // Control if question is correct
     if (elContent === questions[index].answer) {
         console.log("I am working! BOOOOOSHH!");
         score += 100;
-        timeLeft += 10;
+        timeLeft += 6;
         scoreBtn.textContent = "score: " + score;
     } else {
         console.log("You lose my good sir or ma'dam!")
         score -= 50;
-        timeLeft -= 10;
+        timeLeft -= 6;
         scoreBtn.textContent = "score: " + score;
     }
 }
