@@ -3,7 +3,7 @@ var score = 0; // Player's score cannot go below zero
 var highScore = 150; // High Score value
 var timeLeft = 33; // Time left. Should be penalized for incorrect choices
 var index = -1; // index of list questions
-// This selects the correct Btn elements (next time give them the El)
+// These selects the correct Btn elements (next time give them the El)
 var startBtn = document.getElementById("start-quiz");
 var questionDis = document.getElementById("questionDisplay");
 var scoreBtn = document.getElementById("scoreDisplay");
@@ -15,59 +15,10 @@ var option4Btn = document.getElementById("option4");
 var tlEl = document.getElementById("timer"); // tlEL stands for time left
 var enterName = document.createElement("enterName");
 
-// Question Objects
-var q1 = {
-    question: "What Hall of Fame Chicago Bear football player wore #54?",
-    choices: ["Charles Tillman", "Brian Urlacher", "Dick Butkus", "Walter Payton"],
-    answer: "Brian Urlacher"
-};
-var q2 = {
-    question: "What is the name of the stadium of the Chicago Bears?",
-    choices: ["United Center", "Midway Stadium", "O'Hare Field", "Soldier Field"],
-    answer: "Soldier Field"
-};
-var q3 = {
-    question: "What Hall of Fame Chicago Bear football player wore #34?",
-    choices: ["Charles Tillman", "Gale Sayers", "Dick Butkus", "Walter Payton"],
-    answer: "Walter Payton"
-};
-var q4 = {
-    question: "What player has the unique record of back to back overtime walkoff interception tds?",
-    choices: ["Mike Brown", "William 'the fridge' Perry", "Richard Dent", "Rex Grossman"],
-    answer: "Mike Brown"
-};
-var q5 = {
-    question: "What was the last years the Chicago Bears went to the superbowl?",
-    choices: ["1985-1986", "2001-2002", "2006-2007", "2011-2012"],
-    answer: "2006-2007"
-};
-var q6 = {
-    question: "Who are the Bears rival (longest in NFL history)?",
-    choices: ["Detriot Lions", "Minnesota Vikings", "New York Giants", "GreenBay Packers"],
-    answer: "GreenBay Packers"
-};
-var q7 = {
-    question: "Which Chicago Bear has scored the most points as a Bear?",
-    choices: ["Robbie Gould", "Walter Payton", "Gale Sayers", "George Blanda"],
-    answer: "Robbie Gould"
-};
-var q8 = {
-    question: "Which former Bear is currently working for the FBI?",
-    choices: ["Tommie Harris", "Brian Urlacher", "Pat Summeral", "Charles Tillman"],
-    answer: "Charles Tillman"
-};
-var q9 = {
-    question: "What was Walter Payton's nickname?",
-    choices: ["Sweetness", "Cadillac", "The Sultan of Sweat", "Crazy Shoes Payton"],
-    answer: "Sweetness"
-};
-var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9]; // List of question objects
-
-// Functions  1:Countdown   2:UpdateQuestion 
+// Functions  1:Countdown   2:Question Check   3: EndGame
 function countdown() {
     var timeInterval = setInterval(function () {
-        // As long as the `timeLeft` is greater than 1
-        if (timeLeft > 1) {
+        if (timeLeft > 1) { // As long as the `timeLeft` is greater than 1
             tlEl.textContent = timeLeft;
             timeLeft--;
         } else {
@@ -78,12 +29,13 @@ function countdown() {
         }
     }, 1000); // One thousand miliseconds is 1 second
 }
+
 function questionCheck(elContent) { // Control if question is correct
     console.log(elContent);
     console.log(questions[index].answer);
     console.log(elContent === questions[index].answer);
     if (elContent === questions[index].answer) {
-        console.log("I am working! BOOOOOSHH!")
+        console.log("I am working! BOOOOOSHH!");
         score += 100;
         timeLeft += 10;
         scoreBtn.textContent = "score: " + score;
@@ -94,14 +46,15 @@ function questionCheck(elContent) { // Control if question is correct
         scoreBtn.textContent = "score: " + score;
     }
 }
+
 function endGame() { // End Game function
     document.body.innerHTML = ("Game over! The high score is " + highScore);
     document.body.setAttribute("class", "endGame");
 }
 function highScore1() {
     highScoreBtn.textContent = highScore;
-
 }
+
 function updateButton() { // update button functions
     index++;
     if (score > highScore) {
@@ -144,6 +97,7 @@ $(document).ready(function () { // upon document load this function will happen
         highScore1();
     });
     $("#start-quiz").click(function () { // WHen I click start quiz do this...
+        audio.play();
         var playerName1 = $("input[name=enterName]").val();
         if (playerName1 === "") { // A catch or default if people don't insert a name in. 
             playerName1 = "BumbleBee Tuna";

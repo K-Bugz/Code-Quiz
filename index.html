@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Bears Trivia</title>
+    <link rel="icon" href="./assets/media/bearslogo.jpg" type="image">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
 </head>
 
 <body>
@@ -41,12 +41,19 @@
 
     <footer>
         <!-- Add start volume to low -->
-        <audio controls>
+        <audio controls id="beardown">
             <source src="./assets/media/bear-down-chicago-bears-nfl-fight-song.mp3">
         </audio>
         <h3>Made by Kevin Bugusky </h3>
     </footer>
     <!-- javascript section -->
+    <script>
+        // Grabs audio tag and makes sure it plays at an acceptable sound level
+        var audio = document.getElementById("beardown");
+        audio.volume = 0.1;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
+    <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
