@@ -34,7 +34,7 @@ header {
   color: var(--quizQfontColor);
   background-color: var(--quizQBackGround);
   height: 70px;
-  font-size: 6vw;
+  /* font-size: 4vw; */
   padding: 10px, 10px, 10px, 10px;
   font-family: 'Merienda';
   font-size: 22px;
@@ -44,7 +44,7 @@ header {
 }
 
 header #welcome {
-  font-size: 4.5vw;
+  font-size: 34px;
 }
 
 #timer {
