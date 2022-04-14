@@ -2,8 +2,10 @@
 
 
 ## 1. Description
-A quiz over daaaa Bears!
+A quiz over daaaa Bears! Enjoy some Bears trivia and test your knowledge on our Monsters of the Midway!
 
+## Web Link
+https://k-bugz.github.io/Code-Quiz/
 
 ### Directions
 1. Enter your name
